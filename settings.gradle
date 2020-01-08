@@ -1,1 +1,1 @@
-include ':app', ':dinamicparam'
+include ':app', ':dinamicparam', ':loopview'
