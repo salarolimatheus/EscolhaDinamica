@@ -1,4 +1,4 @@
-package com.weigan.loopview;
+package sorocaba.peteca.com.loopview;
 
 public interface OnItemScrollListener {
     /**

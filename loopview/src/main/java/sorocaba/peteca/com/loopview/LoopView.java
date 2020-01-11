@@ -1,4 +1,4 @@
-package com.weigan.loopview;
+package sorocaba.peteca.com.loopview;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.weigan.loopview.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,42 +1,54 @@
 package sorocaba.peteca.com.escolhadinamica;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
-import com.weigan.loopview.LoopView;
-import com.weigan.loopview.OnItemSelectedListener;
+import sorocaba.peteca.com.dinamicparam.DinamicParam;
+import sorocaba.peteca.com.loopview.LoopView;
+import sorocaba.peteca.com.loopview.OnItemSelectedListener;
 
 import java.util.ArrayList;
 
-import sorocaba.peteca.com.dinamicparam.DinamicParam;
-
 public class MainActivity extends AppCompatActivity {
-
-    private Toast toast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        final LoopView loopView = (LoopView) findViewById(R.id.loopView);
-
-        ArrayList<String> list = new ArrayList<>();
-        for (int i = 0; i < 15; i++) {
-            list.add("item " + i);
-        }
-        loopView.setListener(new OnItemSelectedListener() {
+        final DinamicParam dinamicParam = findViewById(R.id.dinamic);
+        dinamicParam.post(new Runnable() {
             @Override
-            public void onItemSelected(int index) {
-                if (toast == null) {
-                    toast = Toast.makeText(MainActivity.this, "item " + index, Toast.LENGTH_SHORT);
-                }
-                toast.setText("item " + index);
-                toast.show();
+            public void run() {
+                double valor = 49.179;
+                String simb = "W";
+                dinamicParam.carregar(valor, simb);
+                dinamicParam.setTextSize(15f);
+                dinamicParam.setTextColor(Color.rgb(0,0,255));
             }
         });
-        loopView.setItems(list);
+
+        Button button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //valor = dinamicParam.pegarValor();
+                Toast.makeText(MainActivity.this, String.valueOf(dinamicParam.pegarValor()), Toast.LENGTH_LONG).show();
+            }
+        });
+
+        Button button2 = findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                double valor = 539.178;
+                String simb = "V";
+                //valor = dinamicParam.pegarValor();
+                dinamicParam.carregar(valor, simb);
+            }
+        });
     }
 }
