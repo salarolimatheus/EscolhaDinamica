@@ -16,7 +16,7 @@
         android:id="@+id/botaoMais">
     </TextView>
 
-    <sorocaba.peteca.com.loopview.LoopView
+    <com.weigan.loopview.LoopView
         android:id="@+id/loopView1"
         android:layout_width="0dp"
         android:layout_weight="0.125"
@@ -24,7 +24,7 @@
         app:awv_textsize="18"
         app:awv_isLoop="true"/>
 
-    <sorocaba.peteca.com.loopview.LoopView
+    <com.weigan.loopview.LoopView
         android:id="@+id/loopView2"
         android:layout_width="0dp"
         android:layout_weight="0.125"
@@ -32,7 +32,7 @@
         app:awv_textsize="18"
         app:awv_isLoop="true"/>
 
-    <sorocaba.peteca.com.loopview.LoopView
+    <com.weigan.loopview.LoopView
         android:id="@+id/loopView3"
         android:layout_width="0dp"
         android:layout_weight="0.125"
@@ -51,7 +51,7 @@
         android:textAlignment="center"
         android:id="@+id/virgula"/>
 
-    <sorocaba.peteca.com.loopview.LoopView
+    <com.weigan.loopview.LoopView
         android:id="@+id/loopView4"
         android:layout_width="0dp"
         android:layout_weight="0.125"
@@ -59,7 +59,7 @@
         app:awv_textsize="18"
         app:awv_isLoop="true" />
 
-    <sorocaba.peteca.com.loopview.LoopView
+    <com.weigan.loopview.LoopView
         android:id="@+id/loopView5"
         android:layout_width="0dp"
         android:layout_weight="0.125"
@@ -67,7 +67,7 @@
         app:awv_textsize="18"
         app:awv_isLoop="true" />
 
-    <sorocaba.peteca.com.loopview.LoopView
+    <com.weigan.loopview.LoopView
         android:id="@+id/loopView6"
         android:layout_width="0dp"
         android:layout_weight="0.125"
@@ -75,7 +75,7 @@
         app:awv_textsize="18"
         app:awv_isLoop="true" />
 
-    <sorocaba.peteca.com.loopview.LoopView
+    <com.weigan.loopview.LoopView
         android:id="@+id/loopView7"
         android:layout_width="0dp"
         android:layout_weight="0.125"

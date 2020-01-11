@@ -6,12 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.weigan.loopview.LoopView;
 
 import java.util.ArrayList;
-
-import sorocaba.peteca.com.loopview.LoopView;
-import sorocaba.peteca.com.loopview.OnItemSelectedListener;
 
 public class DinamicParam extends LinearLayout {
 

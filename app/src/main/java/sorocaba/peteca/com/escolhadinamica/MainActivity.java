@@ -8,10 +8,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import sorocaba.peteca.com.dinamicparam.DinamicParam;
-import sorocaba.peteca.com.loopview.LoopView;
-import sorocaba.peteca.com.loopview.OnItemSelectedListener;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
