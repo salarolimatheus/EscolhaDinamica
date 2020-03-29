@@ -171,7 +171,6 @@ public class DinamicParam extends LinearLayout {
 
     public void setEstado(boolean estado) {
         this.estado = estado;
-        carregar(0, "");
     }
 
     @Override
