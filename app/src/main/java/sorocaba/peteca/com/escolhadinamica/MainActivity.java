@@ -10,33 +10,33 @@ import android.widget.Toast;
 import sorocaba.peteca.com.dinamicparam.DinamicParam;
 
 public class MainActivity extends AppCompatActivity {
+    DinamicParam dinamicParam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final DinamicParam dinamicParam = findViewById(R.id.dinamic);
-        dinamicParam.post(new Runnable() {
-            @Override
-            public void run() {
-                double valor = 49.179;
-                String simb = "W";
-                dinamicParam.carregar(valor, simb);
-                dinamicParam.setTextSize(15f);
-                dinamicParam.setTextColor(Color.rgb(0,0,255));
-            }
-        });
+        final boolean[] estado = {true};
+         dinamicParam = findViewById(R.id.dinamic);
+        final double[] valor = {15};
+        String simb = "W";
+        dinamicParam.carregar(valor[0], simb);
+        dinamicParam.setTextSize(15f);
+        dinamicParam.setTextColor(Color.rgb(0,0,255));
 
         Button button = findViewById(R.id.button);
+        final Button button2 = findViewById(R.id.button2);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //valor = dinamicParam.pegarValor();
-                Toast.makeText(MainActivity.this, String.valueOf(dinamicParam.pegarValor()), Toast.LENGTH_LONG).show();
+                valor[0] = dinamicParam.pegarValor();
+                estado[0] = !estado[0];
+                Toast.makeText(MainActivity.this, Boolean.toString(estado[0]), Toast.LENGTH_LONG).show();
+                dinamicParam.setEstado(estado[0]);
+                button2.setEnabled(estado[0]);
             }
         });
-
-        Button button2 = findViewById(R.id.button2);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

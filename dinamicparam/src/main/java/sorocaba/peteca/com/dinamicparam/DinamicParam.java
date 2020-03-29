@@ -3,6 +3,7 @@ package sorocaba.peteca.com.dinamicparam;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -27,6 +28,7 @@ public class DinamicParam extends LinearLayout {
     private LoopView centesimos;
     private LoopView milesimos;
     private LoopView grandeza;
+    private boolean estado;
 
     public DinamicParam(Context context) {
         super(context);
@@ -98,8 +100,8 @@ public class DinamicParam extends LinearLayout {
                 exponencial += 1;
                 valor /= 1000;
             }
-        } else if (valor < 1) {
-            while (valor < 1) {
+        } else if ((valor < 1) && (valor != 0)){
+            while (valor < 1) {//SE FOR ZERO TRAVA NO LOOPING
                 exponencial -= 1;
                 valor *= 1000;
             }
@@ -118,7 +120,6 @@ public class DinamicParam extends LinearLayout {
         centesimos.setCurrentPosition((((int) (valor)+1)*9)%10);
         valor *= 10;
         milesimos.setCurrentPosition((((int) (valor)+1)*9)%10);
-
         grandeza.setCurrentPosition(3-exponencial);
     }
 
@@ -143,7 +144,6 @@ public class DinamicParam extends LinearLayout {
         botaoMenos.setTextSize(size);
         botaoMais.setTextSize(size);
     }
-
     public void setTextColor(int color) {
         centena.setCenterTextColor(color);
         dezena.setCenterTextColor(color);
@@ -156,5 +156,19 @@ public class DinamicParam extends LinearLayout {
         simbText.setTextColor(color);
         botaoMais.setTextColor(color);
         botaoMenos.setTextColor(color);
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+        carregar(0, "");
+    }
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        if (estado){
+            return super.onInterceptTouchEvent(ev);
+        } else {
+            return true;
+        }
     }
 }
