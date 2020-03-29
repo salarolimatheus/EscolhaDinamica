@@ -28,7 +28,8 @@ public class DinamicParam extends LinearLayout {
     private LoopView centesimos;
     private LoopView milesimos;
     private LoopView grandeza;
-    private boolean estado;
+    private boolean estado = true;
+    private ArrayList<String> unidadesSI;
 
     public DinamicParam(Context context) {
         super(context);
@@ -58,7 +59,7 @@ public class DinamicParam extends LinearLayout {
 
         ArrayList<String> numeros = new ArrayList<>();
         for (int i = 9; i >= 0; i--) {numeros.add(String.valueOf(i));}
-        ArrayList<String> unidadesSI = new ArrayList<>();
+        unidadesSI = new ArrayList<>();
         unidadesSI.add("G"); unidadesSI.add("M"); unidadesSI.add("k"); unidadesSI.add(" ");
         unidadesSI.add("m"); unidadesSI.add("μ"); unidadesSI.add("p");
 
@@ -128,6 +129,16 @@ public class DinamicParam extends LinearLayout {
                 + ((decimos.getSelectedItem()+1)*9)%10 * 0.1 + ((centesimos.getSelectedItem()+1)*9)%10 * 0.01 + ((milesimos.getSelectedItem()+1)*9)%10 * 0.001)
                 * Math.pow(10, (3-grandeza.getSelectedItem())*3);
         return valorAtual;
+    }
+
+    public double pegarValorSE() {
+        valorAtual = (((centena.getSelectedItem()+1)*9)%10 * 100 + ((dezena.getSelectedItem()+1)*9)%10 * 10 + ((unidade.getSelectedItem()+1)*9)%10
+                + ((decimos.getSelectedItem()+1)*9)%10 * 0.1 + ((centesimos.getSelectedItem()+1)*9)%10 * 0.01 + ((milesimos.getSelectedItem()+1)*9)%10 * 0.001);
+        return valorAtual;
+    }
+
+    public String pegarGrandeza() {
+        return (unidadesSI.get(grandeza.getSelectedItem()) + simbolo);
     }
 
     public void setTextSize(float size) {

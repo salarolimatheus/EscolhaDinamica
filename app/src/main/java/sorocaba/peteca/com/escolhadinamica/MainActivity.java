@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final boolean[] estado = {true};
          dinamicParam = findViewById(R.id.dinamic);
         final double[] valor = {15};
         String simb = "W";
@@ -30,11 +29,8 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                valor[0] = dinamicParam.pegarValor();
-                estado[0] = !estado[0];
-                Toast.makeText(MainActivity.this, Boolean.toString(estado[0]), Toast.LENGTH_LONG).show();
-                dinamicParam.setEstado(estado[0]);
-                button2.setEnabled(estado[0]);
+                valor[0] = dinamicParam.pegarValorSE();
+                Toast.makeText(MainActivity.this, Double.toString(valor[0]) + " " + dinamicParam.pegarGrandeza(), Toast.LENGTH_LONG).show();
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {
