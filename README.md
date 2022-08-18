@@ -17,6 +17,7 @@ De maneira geral, o tempo médio gasto considerando todos os tipos de mudança d
 
 ## 🛠️ Como funciona
 
+### XML
 Para adicionar o objeto no XML, basta utilizar a seguinte estrutura:
 ```
   <sorocaba.peteca.com.dinamicparam.DinamicParam
@@ -26,6 +27,7 @@ Para adicionar o objeto no XML, basta utilizar a seguinte estrutura:
   </sorocaba.peteca.com.dinamicparam.DinamicParam>
 ```
 
+### Java
 Na parte do código em Java:
 ```
 dinamicParam = findViewById(R.id.dinamic);
@@ -36,6 +38,15 @@ double valorSE = dinamicParam.pegarValorSE();
 double valorReal = dinamicParam.pegarValor();
 String grandeza = dinamicParam.pegarGrandeza();
 ```
+#### Funções
+| Função                                  	| Descrição da ação                                                           	|
+|-----------------------------------------	|-----------------------------------------------------------------------------	|
+| carregar ( double  valor,  String simb) 	| Carrega um valor desejado para a roleta, além do símbolo a ser representado 	|
+| pegarValor()                            	| Retorna o valor atual da roleta                                             	|
+| pegarValorSE()                          	| Retorna o valor atual da roleta sem os exponenciais                         	|
+| pegarGrandeza()                         	| Retorna o grandeza juntamento com o símbolo                                 	|
+| setTextSize(float size)                 	| Modifica o tamanho do texto da roleta                                       	|
+| setTextColor(int color)                 	| Modifica a cor do texto da roleta                                           	|
 
 ## 📁 Créditos
 
