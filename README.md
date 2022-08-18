@@ -15,8 +15,9 @@ De maneira geral, o tempo médio gasto considerando todos os tipos de mudança d
 
 ## 📱 Visualização
 
-## 🛠️ Como funciona
+![tela-app](https://user-images.githubusercontent.com/34732144/185489892-85d07212-6e6c-479f-a226-948eb7f380c7.gif)
 
+## 🛠️ Como funciona
 ### XML
 Para adicionar o objeto no XML, basta utilizar a seguinte estrutura:
 ```
@@ -41,7 +42,7 @@ String grandeza = dinamicParam.pegarGrandeza();
 #### Funções
 | Função                                  	| Descrição da ação                                                           	|
 |-----------------------------------------	|-----------------------------------------------------------------------------	|
-| carregar ( double  valor,  String simb) 	| Carrega um valor desejado para a roleta, além do símbolo a ser representado 	|
+| carregar (double  valor,  String simb) 	| Carrega um valor desejado para a roleta, além do símbolo a ser representado 	|
 | pegarValor()                            	| Retorna o valor atual da roleta                                             	|
 | pegarValorSE()                          	| Retorna o valor atual da roleta sem os exponenciais                         	|
 | pegarGrandeza()                         	| Retorna o grandeza juntamento com o símbolo                                 	|
