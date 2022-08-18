@@ -5,30 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="horizontal"
-    android:background="#0ff00f">
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:gravity="center">
 
     <sorocaba.peteca.com.dinamicparam.DinamicParam
+        android:id="@+id/dinamic"
         android:layout_width="230dp"
-        android:layout_height="120dp"
-        android:id="@+id/dinamic">
-
+        android:layout_height="120dp">
     </sorocaba.peteca.com.dinamicparam.DinamicParam>
 
-    <Button
+    <android.support.v4.widget.Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button"
-        android:text="um">
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button"
+            android:text="Mostrar"
+            android:backgroundTint="#056cf2"
+            android:textColor="#ffffff">
 
-    </Button>
+        </Button>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button2"
-        android:text="dois">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button2"
+            android:text="Carregar"
+            android:backgroundTint="#056cf2"
+            android:textColor="#ffffff">
 
-    </Button>
+        </Button>
 
+    </LinearLayout>
 </LinearLayout>

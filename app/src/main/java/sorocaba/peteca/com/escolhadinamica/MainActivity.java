@@ -16,12 +16,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-         dinamicParam = findViewById(R.id.dinamic);
         final double[] valor = {15};
         String simb = "W";
+
+        dinamicParam = findViewById(R.id.dinamic);
         dinamicParam.carregar(valor[0], simb);
-        dinamicParam.setTextSize(15f);
+        dinamicParam.setTextSize(18f);
         dinamicParam.setTextColor(Color.rgb(0,0,255));
+        double valorSE = dinamicParam.pegarValorSE();
+        double valorReal = dinamicParam.pegarValor();
+        String grandeza = dinamicParam.pegarGrandeza();
 
         Button button = findViewById(R.id.button);
         final Button button2 = findViewById(R.id.button2);
@@ -36,9 +40,8 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double valor = 539.178;
-                String simb = "V";
-                //valor = dinamicParam.pegarValor();
+                double valor = 539.0;
+                String simb = "W";
                 dinamicParam.carregar(valor, simb);
             }
         });
