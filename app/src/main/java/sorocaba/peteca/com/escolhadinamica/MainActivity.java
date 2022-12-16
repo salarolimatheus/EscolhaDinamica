@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import sorocaba.peteca.com.dinamicparam.DinamicParam;
 
-public class MainActivity extends AppCompatActivity implements DinamicParam.InterfaceTouch{
+public class MainActivity extends AppCompatActivity {
     DinamicParam dinamicParam;
 
     @Override
@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity implements DinamicParam.Inte
         dinamicParam.carregar(valor[0], simb);
         dinamicParam.setTextSize(18f);
         dinamicParam.setTextColor(Color.rgb(0,0,255));
-        dinamicParam.setInterfaceListener(this);
         double valorSE = dinamicParam.pegarValorSE();
         double valorReal = dinamicParam.pegarValor();
         String grandeza = dinamicParam.pegarGrandeza();
@@ -35,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements DinamicParam.Inte
             @Override
             public void onClick(View view) {
                 valor[0] = dinamicParam.pegarValorSE();
-                Toast.makeText(MainActivity.this, valor[0] + " " + dinamicParam.pegarGrandeza(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, Double.toString(valor[0]) + " " + dinamicParam.pegarGrandeza(), Toast.LENGTH_LONG).show();
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {
@@ -46,10 +45,5 @@ public class MainActivity extends AppCompatActivity implements DinamicParam.Inte
                 dinamicParam.carregar(valor, simb);
             }
         });
-    }
-
-    @Override
-    public void fimDoTouch() {
-        Toast.makeText(MainActivity.this, dinamicParam.pegarValorSE() + " " + dinamicParam.pegarGrandeza(), Toast.LENGTH_LONG).show();
     }
 }

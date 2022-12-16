@@ -31,16 +31,6 @@ public class DinamicParam extends LinearLayout {
     private boolean estado = true;
     private ArrayList<String> unidadesSI;
 
-    private InterfaceTouch interfaceTouch;
-
-    public void setInterfaceListener(InterfaceTouch interfaceTouch) {
-        this.interfaceTouch = interfaceTouch;
-    }
-
-    public interface InterfaceTouch {
-        void fimDoTouch();
-    }
-
     public DinamicParam(Context context) {
         super(context);
         init();
@@ -183,33 +173,12 @@ public class DinamicParam extends LinearLayout {
         this.estado = estado;
     }
 
-//    @Override
-//    public boolean onInterceptTouchEvent(MotionEvent event) {
-//        if(!estado)
-//            return true;
-//
-//        int action = event.getAction();
-//        if ((action == MotionEvent.ACTION_UP) ||  (action == MotionEvent.ACTION_CANCEL)) {
-//            if (interfaceTouch != null)
-//                interfaceTouch.fimDoTouch();
-//            return true;
-//        }
-//
-//        return super.onInterceptTouchEvent(event);
-//    }
-
     @Override
-    public boolean dispatchTouchEvent(MotionEvent event) {
-        if(!estado)
-            return true;
-
-        int action = event.getAction();
-        if ((action == MotionEvent.ACTION_UP) ||  (action == MotionEvent.ACTION_CANCEL)) {
-            if (interfaceTouch != null)
-                interfaceTouch.fimDoTouch();
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        if (estado){
+            return super.onInterceptTouchEvent(ev);
+        } else {
             return true;
         }
-
-        return super.dispatchTouchEvent(event);
     }
 }
