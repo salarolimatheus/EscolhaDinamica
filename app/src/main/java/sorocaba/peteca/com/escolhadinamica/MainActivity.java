@@ -50,6 +50,6 @@ public class MainActivity extends AppCompatActivity implements DinamicParam.Inte
 
     @Override
     public void fimDoTouch() {
-        Toast.makeText(MainActivity.this, dinamicParam.pegarValorSE() + " " + dinamicParam.pegarGrandeza(), Toast.LENGTH_LONG).show();
+        Toast.makeText(MainActivity.this, dinamicParam.pegarValor() + " " + dinamicParam.pegarGrandeza(), Toast.LENGTH_SHORT).show();
     }
 }
