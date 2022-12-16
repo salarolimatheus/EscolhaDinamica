@@ -35,6 +35,7 @@ dinamicParam = findViewById(R.id.dinamic);
 dinamicParam.carregar(valor[0], simb);
 dinamicParam.setTextSize(18f);
 dinamicParam.setTextColor(Color.rgb(0,0,255));
+dinamicParam.setEstado(false);
 double valorSE = dinamicParam.pegarValorSE();
 double valorReal = dinamicParam.pegarValor();
 String grandeza = dinamicParam.pegarGrandeza();
@@ -42,12 +43,13 @@ String grandeza = dinamicParam.pegarGrandeza();
 #### Funções
 | Função                                  	| Descrição da ação                                                           	|
 |-----------------------------------------	|-----------------------------------------------------------------------------	|
-| carregar (double  valor,  String simb) 	| Carrega um valor desejado para a roleta, além do símbolo a ser representado 	|
+| carregar (double  valor,  String simb) 	  | Carrega um valor desejado para a roleta, além do símbolo a ser representado 	|
 | pegarValor()                            	| Retorna o valor atual da roleta                                             	|
 | pegarValorSE()                          	| Retorna o valor atual da roleta sem os exponenciais                         	|
 | pegarGrandeza()                         	| Retorna o grandeza juntamento com o símbolo                                 	|
 | setTextSize(float size)                 	| Modifica o tamanho do texto da roleta                                       	|
 | setTextColor(int color)                 	| Modifica a cor do texto da roleta                                           	|
+| setEstado(boolean estado)                	| Habilita ou Desabilita o funcionamento do touchEvent                         	|
 
 ## 📁 Créditos
 
