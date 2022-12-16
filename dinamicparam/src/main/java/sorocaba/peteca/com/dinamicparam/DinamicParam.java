@@ -183,18 +183,33 @@ public class DinamicParam extends LinearLayout {
         this.estado = estado;
     }
 
+//    @Override
+//    public boolean onInterceptTouchEvent(MotionEvent event) {
+//        if(!estado)
+//            return true;
+//
+//        int action = event.getAction();
+//        if ((action == MotionEvent.ACTION_UP) ||  (action == MotionEvent.ACTION_CANCEL)) {
+//            if (interfaceTouch != null)
+//                interfaceTouch.fimDoTouch();
+//            return true;
+//        }
+//
+//        return super.onInterceptTouchEvent(event);
+//    }
+
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
         if(!estado)
             return true;
 
-        boolean resposta = super.dispatchTouchEvent(event);
         int action = event.getAction();
         if ((action == MotionEvent.ACTION_UP) ||  (action == MotionEvent.ACTION_CANCEL)) {
             if (interfaceTouch != null)
                 interfaceTouch.fimDoTouch();
+            return true;
         }
 
-        return resposta;
+        return super.dispatchTouchEvent(event);
     }
 }
