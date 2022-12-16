@@ -2,6 +2,7 @@ package sorocaba.peteca.com.dinamicparam;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -30,6 +31,16 @@ public class DinamicParam extends LinearLayout {
     private LoopView grandeza;
     private boolean estado = true;
     private ArrayList<String> unidadesSI;
+
+    private InterfaceEvento interfaceEvento;
+
+    public void setInterfaceListener(InterfaceEvento interfaceEvento) {
+        this.interfaceEvento = interfaceEvento;
+    }
+
+    public interface InterfaceEvento {
+        void atualizacaoEvento(int action);
+    }
 
     public DinamicParam(Context context) {
         super(context);
@@ -174,11 +185,9 @@ public class DinamicParam extends LinearLayout {
     }
 
     @Override
-    public boolean onInterceptTouchEvent(MotionEvent ev) {
-        if (estado){
-            return super.onInterceptTouchEvent(ev);
-        } else {
-            return true;
-        }
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (interfaceEvento != null)
+            interfaceEvento.atualizacaoEvento(ev.getAction());
+        return super.dispatchTouchEvent(ev);
     }
 }
