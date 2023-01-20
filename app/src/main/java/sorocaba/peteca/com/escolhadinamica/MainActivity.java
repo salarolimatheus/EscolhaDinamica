@@ -2,8 +2,6 @@ package sorocaba.peteca.com.escolhadinamica;
 
 import android.graphics.Color;
 import android.os.CountDownTimer;
-import android.os.Handler;
-import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -14,7 +12,7 @@ import android.widget.Toast;
 
 import sorocaba.peteca.com.dinamicparam.DinamicParam;
 
-public class MainActivity extends AppCompatActivity implements DinamicParam.InterfaceEvento{
+public class MainActivity extends AppCompatActivity implements DinamicParam.InterfaceEvento {
     DinamicParam dinamicParam;
     TextView textView;
     CountDownTimer countDownTimer;

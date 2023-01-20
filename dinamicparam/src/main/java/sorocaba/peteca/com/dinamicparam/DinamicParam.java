@@ -72,7 +72,7 @@ public class DinamicParam extends LinearLayout {
         for (int i = 9; i >= 0; i--) {numeros.add(String.valueOf(i));}
         unidadesSI = new ArrayList<>();
         unidadesSI.add("G"); unidadesSI.add("M"); unidadesSI.add("k"); unidadesSI.add(" ");
-        unidadesSI.add("m"); unidadesSI.add("μ"); unidadesSI.add("p");
+        unidadesSI.add("m"); unidadesSI.add("μ"); unidadesSI.add("n");
 
         centena.setItems(numeros); dezena.setItems(numeros); unidade.setItems(numeros);
         decimos.setItems(numeros); centesimos.setItems(numeros); milesimos.setItems(numeros);
